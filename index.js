@@ -1,4 +1,4 @@
-const apiKey = "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"
+const apiKey = "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"
 
 const url = "https://api.openai.com/v1/completions" 
 
@@ -6,7 +6,7 @@ fetch(url, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer: ${apiKey}`
+        'Authorization': `Bearer ${apiKey}`
     },
     body: JSON.stringify({
         'model': 'text-davinci-003',

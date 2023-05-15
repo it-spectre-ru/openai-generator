@@ -1,8 +1,11 @@
+import { process } from './env.js'
+
+
 const setupTextarea = document.getElementById('setup-textarea') 
 const setupInputContainer = document.getElementById('setup-input-container')
 const movieBossText = document.getElementById('movie-boss-text')
 
-const apiKey = ""
+const apiKey = process.env.OPENAI_API_KEY
 const url = 'https://api.openai.com/v1/completions'
 
 document.getElementById("send-btn").addEventListener("click", () => {
@@ -14,7 +17,7 @@ document.getElementById("send-btn").addEventListener("click", () => {
 })
 
 function fetchBotReply(){
-  fetch(url,{
+  fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -22,9 +25,10 @@ function fetchBotReply(){
     },
     body: JSON.stringify({
       'model': 'text-davinci-003',
-      'prompt': 'Sound enthusiastic in five words or less.'
+      'prompt': 'Sound enthusiastic in five words or less.' 
     })
   }).then(response => response.json()).then(data => 
-    movieBossText.innerText = data.choices[0].text
+  movieBossText.innerText = data.choices[0].text
   )
 }
+

@@ -1,5 +1,5 @@
-import { process } from './env.js'
-import { Configuration, OpenAIApi } from './node_modules/openai'
+import { process } from '/env'
+import { Configuration, OpenAIApi } from 'openai'
 
 
 const setupTextarea = document.getElementById('setup-textarea') 
@@ -25,11 +25,6 @@ async function fetchBotReply(){
       'model': 'text-davinci-003',
       'prompt': 'Sound enthusiastic in five words or less.' 
   })
-  console.log(response)
-
-
-
-  // movieBossText.innerText = data.choices[0].text
-
+  movieBossText.innerText = response.data.choices[0].text.trim()
 }
-
+// [{text: " Excited, Enthusiastic, Driven!",

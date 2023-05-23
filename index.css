@@ -8,7 +8,8 @@
     --border-rad-lg: 15px;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -239,7 +240,7 @@ img.loading {
      ================= */
 
 .output-container {
-    display: none;
+    /* display: none; */
     flex-direction: column;
     margin: 1em auto;
     color: var(--dark);
